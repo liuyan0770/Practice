@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2840" systemVersion="11G63" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Rfd-rn-Awr">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1926"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="5">
+            <objects>
+                <viewController id="2" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zVh-no-yx3" customClass="DrawView">
+                                <color key="backgroundColor" red="1" green="0.69495042009999997" blue="0.2148109325" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wBA-ma-Okz">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="保存图片">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Ybm-QT-S1A" kind="push" id="UxH-E7-HGv"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="zVh-no-yx3" secondAttribute="bottom" constant="301" id="OfU-sr-L6Y"/>
+                            <constraint firstItem="zVh-no-yx3" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="bvj-ev-rHb"/>
+                            <constraint firstItem="wBA-ma-Okz" firstAttribute="top" secondItem="3" secondAttribute="top" constant="130" id="hUH-TW-bjz"/>
+                            <constraint firstItem="zVh-no-yx3" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="jdE-7x-4EY"/>
+                            <constraint firstItem="zVh-no-yx3" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="u2s-Ps-aeo"/>
+                            <constraint firstItem="wBA-ma-Okz" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="wCY-Ob-ogs"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="2p2-y4-qa4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-682" y="173"/>
+        </scene>
+        <!--Save Image To Local View Controller - 将图片保存到本地-->
+        <scene sceneID="aGf-s4-UFt">
+            <objects>
+                <viewController id="Ybm-QT-S1A" customClass="SaveImageToLocalViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="x6K-y3-K49">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q67-KC-dDL">
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="378" id="43Y-Ow-bj3"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="gaH-n3-yRL" appends="YES" id="jwG-vm-3zM"/>
+                                    <outletCollection property="gestureRecognizers" destination="gaH-n3-yRL" appends="YES" id="qhL-Cp-yrR"/>
+                                </connections>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O65-d0-Oda">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="39" id="60i-7j-BDL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="保存图片">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="clickSaveImage:" destination="Ybm-QT-S1A" eventType="touchUpInside" id="JfX-bT-ThY"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="q67-KC-dDL" firstAttribute="leading" secondItem="x6K-y3-K49" secondAttribute="leading" type="default" id="1O1-QM-I3I"/>
+                            <constraint firstItem="O65-d0-Oda" firstAttribute="trailing" secondItem="x6K-y3-K49" secondAttribute="trailing" type="default" id="StB-40-ahQ"/>
+                            <constraint firstItem="q67-KC-dDL" firstAttribute="top" secondItem="x6K-y3-K49" secondAttribute="top" type="default" id="Wtp-BK-x8q"/>
+                            <constraint firstItem="O65-d0-Oda" firstAttribute="leading" secondItem="x6K-y3-K49" secondAttribute="leading" type="default" id="YRT-oY-Pah"/>
+                            <constraint firstItem="O65-d0-Oda" firstAttribute="bottom" secondItem="x6K-y3-K49" secondAttribute="bottom" type="default" id="bBM-xQ-nUh"/>
+                            <constraint firstItem="q67-KC-dDL" firstAttribute="trailing" secondItem="x6K-y3-K49" secondAttribute="trailing" type="default" id="sO1-pv-iIr"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="将图片保存到本地" id="Xvl-sd-qOO"/>
+                    <connections>
+                        <outlet property="imageView" destination="q67-KC-dDL" id="P4s-Jw-5bV"/>
+                        <outlet property="saveButton" destination="O65-d0-Oda" id="gHy-q2-iz6"/>
+                        <outlet property="tapGesture" destination="gaH-n3-yRL" id="p13-AI-7iA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oux-2j-I1c" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="gaH-n3-yRL">
+                    <connections>
+                        <action selector="saveImageToLocal:" destination="Ybm-QT-S1A" id="9c9-8C-meW"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-213" y="172"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="b6y-in-J08">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="Rfd-rn-Awr" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Pzg-gT-RD2">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="2" kind="relationship" relationship="rootViewController" id="ZLb-iT-F9p"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d9g-Zm-PnB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1133" y="173"/>
+        </scene>
+    </scenes>
+    <classes>
+        <class className="DrawView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DrawView.h"/>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="SaveImageToLocalViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SaveImageToLocalViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="clickSaveImage:"/>
+                <relationship kind="action" name="saveImageToLocal:"/>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="saveButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="tapGesture" candidateClass="UITapGestureRecognizer"/>
+            </relationships>
+        </class>
+        <class className="ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>
